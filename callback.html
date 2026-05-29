@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authorization — Food Trend Analyzer</title>
+  <style>
+    body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f5f5f5; }
+    .box { background: white; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.1); max-width: 400px; }
+    h2 { color: #111; }
+    p { color: #555; }
+    code { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-size: 13px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>✅ Authorization Complete</h2>
+    <p>You have successfully authorized <strong>Food Trend Analyzer</strong>.</p>
+    <p>You may close this window and return to the application.</p>
+    <hr style="margin:20px 0; border:none; border-top:1px solid #eee;">
+    <p style="font-size:12px; color:#999;">Authorization code has been received. This page is safe to close.</p>
+  </div>
+  <script>
+    // Pass auth code back to the app if needed
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    if (code) {
+      document.querySelector('code') && (document.querySelector('code').textContent = code);
+    }
+  </script>
+</body>
+</html>
